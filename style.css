@@ -1,0 +1,17 @@
+.container {
+  margin-left: 20px;
+}
+nav {
+  font-size: 18px;
+}
+.chapter {
+  margin-top: 60px;
+}
+.desc {
+  display: grid;
+  grid-template-columns: 60% 30%;
+}
+.codeDiv {
+  background-color: rgb(231, 227, 226);
+  font-size: 24px;
+}
