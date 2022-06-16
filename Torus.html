@@ -31,19 +31,36 @@
         </div>
         <div>
           <div>
-            <h2>
+            <h3>
               TorusGeometry(radius : Float, tube : Float, radialSegments :
               Integer, tubularSegments : Integer, arc : Float)
-            </h2>
+            </h3>
             <ul>
               <li>
-                radius - Radius of the torus, from the center of the torus to
-                the center of the tube. Default is 1.
+                radius : torus의 반지름을 나타낸다. 여기서 반지름이란 튜브의
+                중심으로부터 떨어진 거리를 의미한다. 디폴트 값은 1이다.
+                <div>
+                  <input type="range" min="0.1" max="1" value="0.5" step="0.1" id="range_radius" />
+                </div>
+                <div id="output"></div>
+              </div>
               </li>
-              <li>tube — Radius of the tube. Default is 0.4.</li>
-              <li>radialSegments — Default is 8</li>
-              <li>tubularSegments — Default is 6.</li>
-              <li>arc — Central angle. Default is Math.PI * 2.</li>
+              <li>
+                tube : 튜브의 반지름을 나타낸다. 쉽게 생각해서 튜브가 얇은지
+                두꺼운지 결정한다. 디폴트 값은 0.4이다.
+              </li>
+              <li>
+                radialSegments : 튜브의 옆구리를 이루는 세그먼트의 개수이다.
+                디폴트 값은 6이다. 값이 2라면 오직 앞면과 뒷면만 존재하기 때문에
+                두께가 매우 얇은 종이처럼 렌더링된다. 값이 커질수록 옆구리가
+                둥그렇게 렌더링된다.
+              </li>
+              <li>
+                tubularSegments : 튜브의 모양을 결정하는 세그먼트의 개수이다.
+                값이 3이면 삼각튜브, 4면 사각튜브처럼 렌더링된다. 디폴트 값은
+                6이다. 값이 커질수록 원형 튜브에 가까워진다.
+              </li>
+              <li>arc : torus의 중심각의 크기이다. 디폴트 값은 2PI 이다.</li>
             </ul>
           </div>
         </div>
@@ -62,24 +79,22 @@
           <canvas id="TorusCanvas2"></canvas>
         </div>
         <div>
-          <div>
-            <h2>
-              TorusGeometry(radius : Float, tube : Float, radialSegments :
-              Integer, tubularSegments : Integer, arc : Float)
-            </h2>
-            <ul>
-              <li>
-                radius - Radius of the torus, from the center of the torus to
-                the center of the tube. Default is 1.
-              </li>
-              <li>tube — Radius of the tube. Default is 0.4.</li>
-              <li>radialSegments — Default is 8</li>
-              <li>tubularSegments — Default is 6.</li>
-              <li>arc — Central angle. Default is Math.PI * 2.</li>
-            </ul>
-          </div>
+          <h2>
+            TorusGeometry(radius : Float, tube : Float, radialSegments :
+            Integer, tubularSegments : Integer, arc : Float)
+          </h2>
+          <ul>
+            <li>
+              radius - Radius of the torus, from the center of the torus to the
+              center of the tube. Default is 1.
+            </li>
+            <li>tube — Radius of the tube. Default is 0.4.</li>
+            <li>radialSegments — Default is 8</li>
+            <li>tubularSegments — Default is 6.</li>
+            <li>arc — Central angle. Default is Math.PI * 2.</li>
+          </ul>
         </div>
-      </div>
+        
     </div>
     <script type="text/javascript" src="js/torus.js"></script>
     <script type="text/javascript" src="js/torus2.js"></script>
