@@ -4,13 +4,84 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-    <title>Torus</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="text/javascript" src="js/three.js"></script>
+    <title>TorusKnot</title>
   </head>
 
   <body>
-    <canvas id="HelloCanvas"></canvas>
-    <script type="text/javascript" src="./three.js"></script>
-    <script type="text/javascript" src="./torusknot.js"></script>
+    <div class="container">
+      <h1>TorusKnot Geometry</h1>
+      <nav>
+        <a href="./index.html">Go To Index Page</a><br />
+        <a href="./Torus.html">Go To Torus Page</a>
+      </nav>
+      <div class="chapter">
+        <h2>1. Initialization of Torus</h2>
+        <div class="desc">
+          <div class="codeDiv">
+            <code>
+              const geometry = new THREE.TorusGeometry(0.6, 0.2, 24, 120);<br />
+              const material = new THREE.MeshPhongMaterial({ color: 0xff0000,
+              shininess: 90.0, }); <br />
+              const torus = new THREE.Mesh(geometry, material);
+            </code>
+          </div>
+          <canvas id="TorusKnotCanvas1"></canvas>
+        </div>
+        <div>
+          <div>
+            <h2>
+              TorusGeometry(radius : Float, tube : Float, radialSegments :
+              Integer, tubularSegments : Integer, arc : Float)
+            </h2>
+            <ul>
+              <li>
+                radius - Radius of the torus, from the center of the torus to
+                the center of the tube. Default is 1.
+              </li>
+              <li>tube — Radius of the tube. Default is 0.4.</li>
+              <li>radialSegments — Default is 8</li>
+              <li>tubularSegments — Default is 6.</li>
+              <li>arc — Central angle. Default is Math.PI * 2.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="chapter">
+        <h2>2. something</h2>
+        <div class="desc">
+          <div class="codeDiv">
+            <code>
+              const geometry = new THREE.TorusGeometry(0.6, 0.2, 24, 120);<br />
+              const material = new THREE.MeshPhongMaterial({ color: 0xff0000,
+              shininess: 90.0, }); <br />
+              const torus = new THREE.Mesh(geometry, material);
+            </code>
+          </div>
+          <canvas id="Canvas2"></canvas>
+        </div>
+        <div>
+          <div>
+            <h2>
+              TorusGeometry(radius : Float, tube : Float, radialSegments :
+              Integer, tubularSegments : Integer, arc : Float)
+            </h2>
+            <ul>
+              <li>
+                radius - Radius of the torus, from the center of the torus to
+                the center of the tube. Default is 1.
+              </li>
+              <li>tube — Radius of the tube. Default is 0.4.</li>
+              <li>radialSegments — Default is 8</li>
+              <li>tubularSegments — Default is 6.</li>
+              <li>arc — Central angle. Default is Math.PI * 2.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/torusknot.js"></script>
+    <script type="text/javascript" src="js/torus2.js"></script>
   </body>
 </html>
