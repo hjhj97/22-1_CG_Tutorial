@@ -123,12 +123,38 @@
         </div>
       </div>
       <div class="chapter">
-        <h2>2. Let's make Saturn using Torus (토성 만들기)</h2>
-        <h2>2-1. Find a Saturn Image (적당한 토성 이미지 찾기)</h2>
+        <h2>2. Let's make a Donut using texture mapping</h2>
+        <div class="desc">
+          <div class="codeDiv">
+            <code
+              >const donutGeo = new THREE.TorusGeometry(0.7, 0.3, 100, 120);<br />
+              const donutTex = new THREE.TextureLoader().load(
+              "img/donut.jpeg");<br />
+              const donutMat = new THREE.MeshLambertMaterial({ map: donutTex,
+              });<br />
+              const donut = new THREE.Mesh(donutGeo, donutMat);
+            </code>
+          </div>
+          <canvas id="donutCanvas"></canvas>
+        </div>
+        <p>tube값을 조정하여 도넛의 크기를 바꿀 수 있다</p>
+        <input
+          type="range"
+          min="0.1"
+          max="1.5"
+          value="0.7"
+          step="0.1"
+          id="donut_tube"
+        />
+        <p>날씬한 도넛 vs 통통한 도넛</p>
+      </div>
+      <div class="chapter">
+        <h2>3. Let's make Saturn using Torus (토성 만들기)</h2>
+        <h2>3-1. Find a Saturn Image (적당한 토성 이미지 찾기)</h2>
         <div class="desc">
           <img src="/img/saturn.gif" width="800" height="600" />
         </div>
-        <h2>2-2. Seperate into basic elemnents (여러 요소로 분리하기)</h2>
+        <h2>3-2. Seperate into basic elemnents (여러 요소로 분리하기)</h2>
         <div class="desc">
           <img src="/img/saturn2.gif" width="800" height="600" />
           <div>
@@ -141,7 +167,7 @@
             </ol>
           </div>
         </div>
-        <h2>2-3. Rendering Ring(Torus)</h2>
+        <h2>3-3. Rendering Ring(Torus)</h2>
         <div class="desc">
           <div class="codeDiv">
             <code>
@@ -168,7 +194,7 @@
             </code>
           </p>
         </div>
-        <h2>2-4. Rendering Body (토성의 몸체 렌더링)</h2>
+        <h2>3-4. Rendering Body (토성의 몸체 렌더링)</h2>
         <div class="desc">
           <div class="codeDiv">
             <code>
@@ -180,7 +206,7 @@
           </div>
           <img src="img/saturn4.png" width="400" height="300" />
         </div>
-        <h2>2-5. Texture Mapping on Body (토성의 몸체에 텍스쳐매핑 하기)</h2>
+        <h2>3-5. Texture Mapping on Body (토성의 몸체에 텍스쳐매핑 하기)</h2>
         <div>적당한 토성 텍스쳐 찾기</div>
         <img src="img/saturn_texture.jpg" width="400" height="300" />
         <div class="desc">
@@ -194,7 +220,7 @@
           </div>
           <img src="img/satutrn5.png" width="400" height="300" />
         </div>
-        <h2>2-6. Final Result</h2>
+        <h2>3-6. Final Result</h2>
         <div class="desc">
           <canvas id="saturnCanvas"></canvas>
         </div>
@@ -212,8 +238,13 @@
     </div>
 
     <hr />
-    <footer>출처 :</footer>
+    <footer>
+      이미지출처 :<br />
+      https://voyager.jpl.nasa.gov/galleries/images-voyager-took/saturn/ <br />
+      https://media.istockphoto.com/vectors/chocolate-flow-on-the-pink-seamless-donut-texture-vector-id821527352
+    </footer>
     <script type="text/javascript" src="js/torus.js"></script>
+    <script type="text/javascript" src="js/donut.js"></script>
     <script type="text/javascript" src="js/saturn.js"></script>
   </body>
 </html>
