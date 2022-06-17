@@ -25,7 +25,8 @@
         <div class="desc">
           <div class="codeDiv">
             <code>
-              const geometry = new THREE.TorusGeometry(0.6, 0.2, 24, 120);<br />
+              const geometry = new THREE.TorusGeometry(0.6, 0.2, 24,
+              120,6.29);<br />
               const material = new THREE.MeshPhongMaterial({ color: 0xff0000,
               shininess: 90.0, }); <br />
               const torus = new THREE.Mesh(geometry, material);
@@ -242,9 +243,21 @@
 
     <hr />
     <footer>
-      이미지출처 :<br />
-      https://voyager.jpl.nasa.gov/galleries/images-voyager-took/saturn/ <br />
-      https://media.istockphoto.com/vectors/chocolate-flow-on-the-pink-seamless-donut-texture-vector-id821527352
+      <div>
+        <p>이미지출처 :</p>
+        <p>
+          https://voyager.jpl.nasa.gov/galleries/images-voyager-took/saturn/
+        </p>
+        <p>
+          https://media.istockphoto.com/vectors/chocolate-flow-on-the-pink-seamless-donut-texture-vector-id821527352
+        </p>
+      </div>
+      <div>
+        <p>문서 출처 :</p>
+        <p>
+          https://velog.io/@mh0223/Three.js-%EC%A7%80%EC%98%A4%EB%A9%94%ED%8A%B8%EB%A6%ACGeometry
+        </p>
+      </div>
     </footer>
     <script type="text/javascript" src="js/torus.js"></script>
     <script type="text/javascript" src="js/donut.js"></script>

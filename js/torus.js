@@ -1,3 +1,15 @@
+const $radius_out = document.querySelector("#radius_out");
+const $tube_out = document.querySelector("#tube_out");
+const $radialSeg_out = document.querySelector("#radialSeg_out");
+const $tubularSeg_out = document.querySelector("#tubularSeg_out");
+const $arc_out = document.querySelector("#arc_out");
+
+const $range_radius = document.querySelector("#range_radius");
+const $range_tube = document.querySelector("#range_tube");
+const $range_radialSeg = document.querySelector("#range_radialSeg");
+const $range_tubularSeg = document.querySelector("#range_tubularSeg");
+const $range_arc = document.querySelector("#range_arc");
+
 const h_scr = 450;
 const v_scr = 300;
 const scene = new THREE.Scene();
@@ -12,18 +24,6 @@ light1.position.set(1, 1, 2);
 scene.add(light1);
 const light2 = new THREE.AmbientLight(0xffffff, 1);
 scene.add(light2);
-
-const $radius_out = document.querySelector("#radius_out");
-const $tube_out = document.querySelector("#tube_out");
-const $radialSeg_out = document.querySelector("#radialSeg_out");
-const $tubularSeg_out = document.querySelector("#tubularSeg_out");
-const $arc_out = document.querySelector("#arc_out");
-
-const $range_radius = document.querySelector("#range_radius");
-const $range_tube = document.querySelector("#range_tube");
-const $range_radialSeg = document.querySelector("#range_radialSeg");
-const $range_tubularSeg = document.querySelector("#range_tubularSeg");
-const $range_arc = document.querySelector("#range_arc");
 
 $radius_out.innerText = $range_radius.value;
 $tube_out.innerText = $range_tube.value;

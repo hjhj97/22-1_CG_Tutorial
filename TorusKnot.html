@@ -13,15 +13,19 @@
     <div class="container">
       <h1>TorusKnot Geometry</h1>
       <nav>
+        <a href="https://threejs.org/docs/#api/en/geometries/TorusKnotGeometry"
+          >Go To Offical Document</a
+        ><br />
         <a href="./index.html">Go To Index Page</a><br />
         <a href="./Torus.html">Go To Torus Page</a>
       </nav>
       <div class="chapter">
-        <h2>1. Initialization of Torus</h2>
+        <h2>1. Initialization of TorusKnot</h2>
         <div class="desc">
           <div class="codeDiv">
             <code>
-              const geometry = new THREE.TorusGeometry(0.6, 0.2, 24, 120);<br />
+              const geometry = new THREE.TorusKnotGeometry(1, 0.2, 160, 16, 3,
+              2); <br />
               const material = new THREE.MeshPhongMaterial({ color: 0xff0000,
               shininess: 90.0, }); <br />
               const torus = new THREE.Mesh(geometry, material);
@@ -31,54 +35,115 @@
         </div>
         <div>
           <div>
-            <h2>
-              TorusGeometry(radius : Float, tube : Float, radialSegments :
-              Integer, tubularSegments : Integer, arc : Float)
-            </h2>
+            <h3>
+              TorusKnotGeometry(radius : Float, tube : Float, tubularSegments :
+              Integer, radialSegments : Integer, p : Integer, q : Integer)
+            </h3>
             <ul>
               <li>
-                radius - Radius of the torus, from the center of the torus to
-                the center of the tube. Default is 1.
+                radius : torus의 반지름을 나타낸다. 디폴트 값은 1이다.
+                <div>
+                  <input
+                    type="range"
+                    min="0.1"
+                    max="2.0"
+                    value="1.0"
+                    step="0.1"
+                    id="range_radius"
+                  />
+                  <span id="radius_out"></span>
+                </div>
               </li>
-              <li>tube — Radius of the tube. Default is 0.4.</li>
-              <li>radialSegments — Default is 8</li>
-              <li>tubularSegments — Default is 6.</li>
-              <li>arc — Central angle. Default is Math.PI * 2.</li>
+              <li>
+                tube : 튜브의 반지름을 나타낸다. 디폴트 값은 0.4이다.
+                <div>
+                  <input
+                    type="range"
+                    min="0.1"
+                    max="1"
+                    value="0.2"
+                    step="0.1"
+                    id="range_tube"
+                  />
+                  <span id="tube_out"></span>
+                </div>
+              </li>
+              <li>
+                tubularSegments : 튜브의 모양을 결정하는 세그먼트의 개수이다.
+                값이 3이면 삼각튜브, 4면 사각튜브처럼 렌더링된다. 디폴트 값은
+                6이다. 값이 커질수록 원형 튜브에 가까워진다.
+                <div>
+                  <input
+                    type="range"
+                    min="3"
+                    max="120"
+                    value="80"
+                    step="1"
+                    id="range_tubularSeg"
+                  />
+                  <span id="tubularSeg_out"></span>
+                </div>
+              </li>
+              <li>
+                radialSegments : 튜브의 옆구리를 이루는 세그먼트의 개수이다.
+                디폴트 값은 8이다.
+                <div>
+                  <input
+                    type="range"
+                    min="2"
+                    max="100"
+                    value="10"
+                    step="1"
+                    id="range_radialSeg"
+                  />
+                  <span id="radialSeg_out"></span>
+                </div>
+              </li>
+              <li>
+                p : 회전 대칭축으로 휘는 횟수. 디폴트 값은 2이다.
+                <div>
+                  <input
+                    type="range"
+                    min="1"
+                    max="30"
+                    value="2"
+                    step="1"
+                    id="range_p"
+                  />
+                  <span id="p_out"></span>
+                </div>
+              </li>
+              <li>
+                q : torus 내부의 원 안으로 휘는 횟수. 디폴트 값은 3이다.
+                <div>
+                  <input
+                    type="range"
+                    min="0"
+                    max="30"
+                    value="3"
+                    step="1"
+                    id="range_q"
+                  />
+                  <span id="q_out"></span>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
       </div>
       <div class="chapter">
-        <h2>2. something</h2>
+        <h2>2. About p and q</h2>
         <div class="desc">
-          <div class="codeDiv">
-            <code>
-              const geometry = new THREE.TorusGeometry(0.6, 0.2, 24, 120);<br />
-              const material = new THREE.MeshPhongMaterial({ color: 0xff0000,
-              shininess: 90.0, }); <br />
-              const torus = new THREE.Mesh(geometry, material);
-            </code>
-          </div>
-          <canvas id="Canvas2"></canvas>
+          <ul>
+            <li>
+              p와 q는 서로소여야 한다. 서로소가 아니라면 약분한 결과로
+              렌더링된다.
+            </li>
+            <li>.</li>
+          </ul>
+          <!-- <canvas id="Canvas2"></canvas> -->
         </div>
-        <div>
-          <div>
-            <h2>
-              TorusGeometry(radius : Float, tube : Float, radialSegments :
-              Integer, tubularSegments : Integer, arc : Float)
-            </h2>
-            <ul>
-              <li>
-                radius - Radius of the torus, from the center of the torus to
-                the center of the tube. Default is 1.
-              </li>
-              <li>tube — Radius of the tube. Default is 0.4.</li>
-              <li>radialSegments — Default is 8</li>
-              <li>tubularSegments — Default is 6.</li>
-              <li>arc — Central angle. Default is Math.PI * 2.</li>
-            </ul>
-          </div>
-        </div>
+        <div></div>
       </div>
     </div>
     <script type="text/javascript" src="js/torusknot.js"></script>
