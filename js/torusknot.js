@@ -16,7 +16,9 @@ const light2 = new THREE.AmbientLight(0xffffff, 1);
 scene.add(light2);
 
 const geometry = new THREE.TorusKnotGeometry();
+const saturnTex = new THREE.TextureLoader().load("img/saturn_texture.jpg");
 const material = new THREE.MeshPhongMaterial({
+  map: saturnTex,
   color: 0xff0000,
   shininess: 90.0,
 });
