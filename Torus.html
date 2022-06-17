@@ -13,6 +13,10 @@
     <div class="container">
       <h1>Torus Geometry</h1>
       <nav>
+        <a
+          href="https://threejs.org/docs/index.html#api/en/geometries/TorusGeometry"
+          >Go to Three.js Offical Document</a
+        ><br />
         <a href="./index.html">Go To Index Page</a><br />
         <a href="./TorusKnot.html">Go To TorusKnot Page</a>
       </nav>
@@ -53,7 +57,8 @@
               </li>
               <li>
                 tube : 튜브의 반지름을 나타낸다. 쉽게 생각해서 튜브가 얇은지
-                두꺼운지 결정한다. 디폴트 값은 0.4이다.
+                두꺼운지 결정한다. 디폴트 값은 0.4이다. tube의 값이 radius보다
+                크거나 같으면 구멍이 메꿔지게 된다.
                 <div>
                   <input
                     type="range"
@@ -117,38 +122,98 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="chapter">
-      <h2>2. something</h2>
-      <div class="desc">
-        <div class="codeDiv">
-          <code>
-            const geometry = new THREE.TorusGeometry(0.6, 0.2, 24, 120);<br />
-            const material = new THREE.MeshPhongMaterial({ color: 0xff0000,
-            shininess: 90.0, }); <br />
-            const torus = new THREE.Mesh(geometry, material);
-          </code>
+      <div class="chapter">
+        <h2>2. Let's make Saturn using Torus (토성 만들기)</h2>
+        <h2>2-1. Find a Saturn Image (적당한 토성 이미지 찾기)</h2>
+        <div class="desc">
+          <img src="/img/saturn.gif" width="800" height="600" />
         </div>
-        <canvas id="TorusCanvas2"></canvas>
-      </div>
-      <div>
-        <h2>
-          TorusGeometry(radius : Float, tube : Float, radialSegments : Integer,
-          tubularSegments : Integer, arc : Float)
-        </h2>
-        <ul>
-          <li>
-            radius - Radius of the torus, from the center of the torus to the
-            center of the tube. Default is 1.
-          </li>
-          <li>tube — Radius of the tube. Default is 0.4.</li>
-          <li>radialSegments — Default is 8</li>
-          <li>tubularSegments — Default is 6.</li>
-          <li>arc — Central angle. Default is Math.PI * 2.</li>
-        </ul>
+        <h2>2-2. Seperate into basic elemnents (여러 요소로 분리하기)</h2>
+        <div class="desc">
+          <img src="/img/saturn2.gif" width="800" height="600" />
+          <div>
+            다음과 같이 총 4개로 토성을 구성할 것이다.
+            <ol>
+              <li>토성의 고리에서 가장 바깥쪽 -> 베이지색 torus 1</li>
+              <li>토성의 고리에서 가운데 검은색 -> 검은색 torus 2</li>
+              <li>토성의 고리에서 가장 안쪽 -> 베이지색 torus 3</li>
+              <li>토성의 본체 -> sphere</li>
+            </ol>
+          </div>
+        </div>
+        <h2>2-3. Rendering Ring(Torus)</h2>
+        <div class="desc">
+          <div class="codeDiv">
+            <code>
+              const geometry1 = new THREE.TorusGeometry(1.7, 0.15, 2, 120);<br />
+              const geometry2 = new THREE.TorusGeometry(1.5, 0.05, 2, 120);<br />
+              const geometry3 = new THREE.TorusGeometry(1.25, 0.2, 2, 120);<br />
+              const material1 = new THREE.MeshLambertMaterial({ color: 0x95925a,
+              }); <br />
+              const material2 = new THREE.MeshLambertMaterial({ color: 0x4e5238,
+              }); <br />
+              const material3 = new THREE.MeshLambertMaterial({ color: 0x9fa665,
+              }); <br />
+              const ring1 = new THREE.Mesh(geometry1, material1);<br />
+              const ring2 = new THREE.Mesh(geometry2, material2);<br />
+              const ring3 = new THREE.Mesh(geometry3, material3);
+            </code>
+          </div>
+          <img src="img/saturn3.png" width="400" height="300" />
+          <p>
+            고리 3개가 서로 맞닿게 하기 위해서는 아래 수식을 만족해야 한다.<br />
+            <code style="font-size: 14px">
+              (바깥쪽 torus의 radius) - (바깥쪽 torus의 tube) = (안쪽 torus의
+              radius) + (안쪽 torus의 tube)
+            </code>
+          </p>
+        </div>
+        <h2>2-4. Rendering Body (토성의 몸체 렌더링)</h2>
+        <div class="desc">
+          <div class="codeDiv">
+            <code>
+              const sphereGeo = new THREE.SphereGeometry(0.8, 120, 120);<br />
+              const saturnMaterial = new THREE.MeshBasicMaterial({ color:
+              0xc8d179 });<br />
+              const saturn = new THREE.Mesh(sphereGeo, saturnMaterial);
+            </code>
+          </div>
+          <img src="img/saturn4.png" width="400" height="300" />
+        </div>
+        <h2>2-5. Texture Mapping on Body (토성의 몸체에 텍스쳐매핑 하기)</h2>
+        <div>적당한 토성 텍스쳐 찾기</div>
+        <img src="img/saturn_texture.jpg" width="400" height="300" />
+        <div class="desc">
+          <div class="codeDiv">
+            <code>
+              const sphereGeo = new THREE.SphereGeometry(0.8, 120, 120);<br />
+              const saturnTex = new
+              THREE.TextureLoader().load("img/saturn_texture.jpg");<br />
+              const saturn = new THREE.Mesh(sphereGeo, saturnMaterial);
+            </code>
+          </div>
+          <img src="img/satutrn5.png" width="400" height="300" />
+        </div>
+        <h2>2-6. Final Result</h2>
+        <div class="desc">
+          <canvas id="saturnCanvas"></canvas>
+        </div>
+        <p>Zoom</p>
+        <input
+          type="range"
+          min="5"
+          max="100"
+          value="50"
+          step="1"
+          id="saturn_zoom"
+        />
+        <span id="saturn_out"></span>
       </div>
     </div>
+
+    <hr />
+    <footer>출처 :</footer>
     <script type="text/javascript" src="js/torus.js"></script>
-    <script type="text/javascript" src="js/torus2.js"></script>
+    <script type="text/javascript" src="js/saturn.js"></script>
   </body>
 </html>
