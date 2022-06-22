@@ -25,7 +25,7 @@ $donut_tube.oninput = () => {
   const mat = new THREE.MeshLambertMaterial({
     map: donutTex,
   });
-  r(donutGeo, mat);
+  renderDonut(donutGeo, mat);
 };
 
 const donutTex = new THREE.TextureLoader().load(
