@@ -30,34 +30,35 @@
         <h2>0. About Torus</h2>
         <div class="desc">
           <p style="font-size: 20px">
-            torus의 어원은 라틴어로 쿠션, 소파를 뜻하는 tŏrus에서 파생되었으며 
-            사전에서는 원환면이라고 부른다. 원을 3차원 공간상에서 원을 포함하는 
-            평면 위의 직선을 축으로 회전하여 만든
-            회전면이다. 원환면을 표면으로 하는 입체는 도넛의 모양을 닮게 되는데
-            이를 원환체 또는 toroid라고 한다. 여기서 원(circle)이랑 순수하게
-            테두리 위의 점들의 집합만 지칭하고, 원 내부의 점들은 포함하지 않기
-            때문에 원을 회전시켜서 만들어진 torus는 내부가 비어있다고 가정해야
-            한다. 만약 내부가 꽉 차있는 도형을 만들고 싶다면, 원의 내부면적을
-            모두 포함하는 'disk'를 회전시켜야 하며, 이렇게 생성된 도형은 'solid
-            torus'라고 부른다.<br /><br />
+            torus의 어원은 라틴어로 쿠션, 소파를 뜻하는 tŏrus에서 파생되었으며
+            사전에서는 원환면이라고 부른다. 원을 3차원 공간상에서 원을 포함하는
+            평면 위의 직선을 축으로 회전하여 만든 회전면이다. 원환면을 표면으로
+            하는 입체는 도넛의 모양을 닮게 되는데 이를 원환체 또는 toroid라고
+            한다. 여기서 원(circle)이랑 순수하게 테두리 위의 점들의 집합만
+            지칭하고, 원 내부의 점들은 포함하지 않기 때문에 원을 회전시켜서
+            만들어진 torus는 내부가 비어있다고 가정해야 한다. 만약 내부가 꽉
+            차있는 도형을 만들고 싶다면, 원의 내부면적을 모두 포함하는 'disk'를
+            회전시켜야 하며, 이렇게 생성된 도형은 'solid torus'라고 부른다.<br /><br />
             torus를 매개변수 식으로 표현하면 아래와 같이 나타낼 수 있다. <br />
-            
+
             <img src="https://latex.codecogs.com/svg.image?\LARGE&space;x(u,v)=(R&plus;r\cos&space;{v})\cos&space;{u}\" title="https://latex.codecogs.com/svg.image?\LARGE x(u,v)=(R+r\cos {v})\cos {u}\" /><br/>
             <img src="https://latex.codecogs.com/svg.image?\LARGE&space;y(u,v)=(R&plus;r\cos&space;{v})\sin&space;{u}\" title="https://latex.codecogs.com/svg.image?\LARGE y(u,v)=(R+r\cos {v})\sin {u}\" /><br/>
             <img src="https://latex.codecogs.com/svg.image?\LARGE&space;z(u,v)=&space;r&space;sin\&space;{v}" title="https://latex.codecogs.com/svg.image?\LARGE z(u,v)= r sin\ {v}" />
-            <br>
-            여기서 각 변수의 범위와 의미는 다음과 같다.<br/><br/>
+            <br />
+            여기서 각 변수의 범위와 의미는 다음과 같다.<br /><br />
             <img src="https://latex.codecogs.com/svg.image?\large&space;u,v" title="https://latex.codecogs.com/svg.image?\large u,v" />
-            는 구간 
+            는 구간
             <img src="https://latex.codecogs.com/svg.image?\large&space;[0,2\pi&space;)" title="https://latex.codecogs.com/svg.image?\large [0,2\pi )" />
-            의 원소이다.<br>
-            
+            의 원소이다.<br />
+
             <img src="https://latex.codecogs.com/svg.image?\large&space;R" title="https://latex.codecogs.com/svg.image?\large R" />
-            은 원환면의 중심에서 튜브의 중심까지의 거리이다.<br/>
+            은 원환면의 중심에서 튜브의 중심까지의 거리이다.<br />
             <img src="https://latex.codecogs.com/svg.image?\large&space;r" title="https://latex.codecogs.com/svg.image?\large r" />
             은 튜브 단면의 반지름이다.
           </p>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Torus.png/440px-Torus.png">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Torus.png/440px-Torus.png"
+          />
         </div>
       </div>
       <div class="chapter">
@@ -283,23 +284,44 @@
         />
         <span id="saturn_out"></span>
       </div>
-    </div>
-    <div id="chapter">
-      <h2>4. Let's make Rubber Duck Tube (러버덕으로 튜브를 만들어 보기)</h2>
-      <h2>4-1. Find a Rubber Duck image</h2>
-      <div class="desc">
-        <p>적당한 러버덕 이미지를 찾는다</p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Rubber_Duck_%288374802487%29.jpg/440px-Rubber_Duck_%288374802487%29.jpg">
-      </div>
-      <h2>4-2. Seperate into basic elements </h2>
-      <div class="desc">
-        <p>오리의 몸체는 가운데가 빈 Torus로, 오리의 머리는 Sphere로 하고, 노란색 배경에 눈이 그려진 texture를 매핑한다. 머리의 일부분은 오리의 몸체에 파묻는다. 그리고 오리의 부리는 다시 Torus로 만든다.</p>
-        <img src="/img/duck2.jpeg">
-      </div>
-      <h2>4-3. Final result </h2>
-      <div class="desc">
-        <p></p>
-        <canvas id="rubberDuckCanvas"></canvas>
+
+      <div id="chapter">
+        <h2>4. Let's make Rubber Duck Tube (러버덕으로 튜브를 만들어 보기)</h2>
+        <h2>4-1. Find a Rubber Duck image</h2>
+        <div class="desc">
+          <p>적당한 러버덕 이미지를 찾는다</p>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Rubber_Duck_%288374802487%29.jpg/440px-Rubber_Duck_%288374802487%29.jpg"
+          />
+        </div>
+        <h2>4-2. Seperate into basic elements</h2>
+        <p>
+          오리의 몸체는 가운데가 빈 Torus로, 오리의 머리는 Sphere로 하고, 노란색
+          배경에 눈이 그려진 texture를 매핑한다. <br />
+          머리의 일부분은 오리의 몸체에 파묻는다. 그리고 오리의 부리는 다시
+          Torus로 만든다. 오리의 머리는 몸체의 자식으로, 오리의 부리는 오리
+          머리의 자식으로 설정한다.
+        </p>
+        <div class="desc">
+          <div class="codeDiv">
+            <code>
+              const tubeGeo = new THREE.TorusGeometry(1.3, 0.6, 100, 120);<br />
+              const duckGeo = new THREE.SphereGeometry(0.8);<br />
+              const duckBeakGeo = new THREE.TorusGeometry(0.1, 0.15, 3, 120);<br />
+              const duckTexture = new
+              THREE.TextureLoader().load("/img/duckTexture.png");<br /><br />
+              scene4.add(tube);<br />
+              tube.add(duck);<br />
+              duck.add(duckBeak);
+            </code>
+          </div>
+          <img src="/img/duck2.jpeg" />
+        </div>
+        <h2>4-3. Final result</h2>
+        <div class="desc">
+          <p></p>
+          <canvas id="rubberDuckCanvas"></canvas>
+        </div>
       </div>
     </div>
     <hr />
@@ -312,9 +334,7 @@
         <p>
           https://media.istockphoto.com/vectors/chocolate-flow-on-the-pink-seamless-donut-texture-vector-id821527352
         </p>
-        <p>
-          https://en.wikipedia.org/wiki/Rubber_duck
-        </p>
+        <p>https://en.wikipedia.org/wiki/Rubber_duck</p>
       </div>
       <div>
         <p>문서 출처 :</p>
@@ -322,6 +342,7 @@
           https://velog.io/@mh0223/Three.js-%EC%A7%80%EC%98%A4%EB%A9%94%ED%8A%B8%EB%A6%ACGeometry
         </p>
         <p>https://ko.wikipedia.org/wiki/%EC%9B%90%ED%99%98%EB%A9%B4</p>
+        <p>https://en.wikipedia.org/wiki/Torus_knot</p>
       </div>
     </footer>
     <script type="text/javascript" src="js/torus.js"></script>
