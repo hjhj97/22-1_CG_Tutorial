@@ -1,5 +1,6 @@
 # 22-1_CG_Tutorial - Torus , TorusKnot
 
+## You can see output in [here!](https://hjhj97.github.io/22-1_CG_Tutorial/index.html)
 ## Torus
 
 torus는 우리말로 원환면이라고 한다. 해석하자면 원으로 된 환(고리)모양이라는 뜻이다. three.js에서도 torus를 렌더링하기 위한 메서드를 지원한다. 인자로는 5개를 받는다.  
