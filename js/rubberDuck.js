@@ -15,7 +15,10 @@ scene4.add(light7);
 const tubeGeo = new THREE.TorusGeometry(1.3, 0.6, 100, 120);
 const duckGeo = new THREE.SphereGeometry(0.8);
 const duckBeakGeo = new THREE.TorusGeometry(0.1, 0.15, 3, 120);
-const duckTexture = new THREE.TextureLoader().load("/img/duckTexture.png");
+//const duckTexture = new THREE.TextureLoader().load("/img/duckTexture.png");
+const duckTexture = new THREE.TextureLoader().load(
+  "https://raw.githubusercontent.com/hjhj97/22-1_CG_Tutorial/main/img/duckTexture.png"
+);
 
 const tubeMaterial = new THREE.MeshPhongMaterial({
   color: 0xffaa00,
